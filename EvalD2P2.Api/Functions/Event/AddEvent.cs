@@ -115,4 +115,29 @@ public class AddEvent
         return response;
     }
     
+    [Function("GetById")]
+    public async Task<HttpResponseData> GetByIdAsync(
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "event/{id}")] HttpRequestData req,
+        Guid id,
+        FunctionContext executionContext)
+    {
+        _logger.LogInformation("C# HTTP trigger function processed a request.");
+        
+        var response = req.CreateResponse(HttpStatusCode.OK);
+        
+        try
+        {
+            var @event = await _eventService.GetEventByIdAsync(id);
+            var json = JsonSerializer.Serialize(@event);
+            await response.WriteStringAsync(json);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, ex.Message);
+            response = req.CreateResponse(HttpStatusCode.InternalServerError);
+        }
+        
+        return response;
+    }
+    
 }
