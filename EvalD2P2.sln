@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvalD2P2.Api", "EvalD2P2.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvalD2P2.Tests", "EvalD2P2.Tests\EvalD2P2.Tests.csproj", "{28DE8CEF-EAC9-43AA-A7E5-E36F4E6EE17C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvalD2P2.Documentation", "EvalD2P2.Documentation\EvalD2P2.Documentation.csproj", "{F45CC0FA-6D9C-4253-9E38-39A485AE34C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{28DE8CEF-EAC9-43AA-A7E5-E36F4E6EE17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28DE8CEF-EAC9-43AA-A7E5-E36F4E6EE17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28DE8CEF-EAC9-43AA-A7E5-E36F4E6EE17C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F45CC0FA-6D9C-4253-9E38-39A485AE34C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45CC0FA-6D9C-4253-9E38-39A485AE34C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45CC0FA-6D9C-4253-9E38-39A485AE34C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45CC0FA-6D9C-4253-9E38-39A485AE34C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
