@@ -6,4 +6,18 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\EvalD2P2.Entities\EvalD2P2.Entities.csproj" />
+      <ProjectReference Include="..\EvalD2P2.Repositories.Contracts\EvalD2P2.Repositories.Contracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.21.0" />
+      <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.1.0" />
+      <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.17.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.16" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.16" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    </ItemGroup>
+
 </Project>
