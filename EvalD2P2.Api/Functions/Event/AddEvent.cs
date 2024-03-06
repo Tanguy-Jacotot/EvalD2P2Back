@@ -92,4 +92,27 @@ public class AddEvent
         return response;
     }
     
+    [Function("DeleteEvent")]
+    public async Task<HttpResponseData> DeleteAsync(
+        [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "event/{id}")] HttpRequestData req,
+        Guid id,
+        FunctionContext executionContext)
+    {
+        _logger.LogInformation("C# HTTP trigger function processed a request.");
+        
+        var response = req.CreateResponse(HttpStatusCode.OK);
+        
+        try
+        {
+            await _eventService.DeleteEventAsync(id);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, ex.Message);
+            response = req.CreateResponse(HttpStatusCode.InternalServerError);
+        }
+        
+        return response;
+    }
+    
 }
