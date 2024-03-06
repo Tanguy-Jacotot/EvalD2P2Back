@@ -66,4 +66,30 @@ public class AddEvent
         return response;
     }
     
+    [Function("UpdateEvent")]
+    public async Task<HttpResponseData> UpdateAsync(
+        [HttpTrigger(AuthorizationLevel.Function, "put", Route = "event/{id}")] HttpRequestData req,
+        Guid id,
+        FunctionContext executionContext)
+    {
+        _logger.LogInformation("C# HTTP trigger function processed a request.");
+        
+        var response = req.CreateResponse(HttpStatusCode.OK);
+        
+        try
+        {
+            var content = await new StreamReader(req.Body).ReadToEndAsync();
+            var @event = JsonSerializer.Deserialize<Entities.Event>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            @event.IdEvent = id;
+            await _eventService.UpdateEventAsync(@event);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, ex.Message);
+            response = req.CreateResponse(HttpStatusCode.InternalServerError);
+        }
+        
+        return response;
+    }
+    
 }
