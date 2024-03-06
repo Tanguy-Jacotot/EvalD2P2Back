@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "EvalD2P2.AzureApi": {
+    "EvalD2P2.Api": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7075",
+      "commandLineArgs": "--port 7093",
       "launchBrowser": false
     }
   }
