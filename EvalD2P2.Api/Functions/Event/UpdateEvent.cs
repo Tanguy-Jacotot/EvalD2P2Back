@@ -7,20 +7,21 @@ using Microsoft.Extensions.Logging;
 
 namespace EvalD2P2.Api.Functions.Event;
 
-public class AddEvent
+public class UpdateEvent
 {
     private readonly ILogger _logger;
     private readonly IEventService _eventService;
     
-    public AddEvent(ILogger<AddEvent> logger, IEventService eventService)
+    public UpdateEvent(ILogger<AddEvent> logger, IEventService eventService)
     {
         _logger = logger;
         _eventService = eventService;
     }
     
-    [Function("AddEvent")]
-    public async Task<HttpResponseData> RunAsync(
-        [HttpTrigger(AuthorizationLevel.Function, "post", Route = "event")] HttpRequestData req,
+    [Function("UpdateEvent")]
+    public async Task<HttpResponseData> UpdateAsync(
+        [HttpTrigger(AuthorizationLevel.Function, "put", Route = "event/{id}")] HttpRequestData req,
+        Guid id,
         FunctionContext executionContext)
     {
         _logger.LogInformation("C# HTTP trigger function processed a request.");
@@ -31,7 +32,8 @@ public class AddEvent
         {
             var content = await new StreamReader(req.Body).ReadToEndAsync();
             var @event = JsonSerializer.Deserialize<Entities.Event>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-            await _eventService.AddEventAsync(@event);
+            @event.IdEvent = id;
+            await _eventService.UpdateEventAsync(@event);
         }
         catch (Exception ex)
         {
@@ -41,5 +43,6 @@ public class AddEvent
         
         return response;
     }
+
     
 }

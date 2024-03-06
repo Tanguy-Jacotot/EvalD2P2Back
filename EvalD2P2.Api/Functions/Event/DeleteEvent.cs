@@ -1,5 +1,4 @@
 ﻿using System.Net;
-using System.Text.Json;
 using EvalD2P2.Services.Contracts;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -7,20 +6,20 @@ using Microsoft.Extensions.Logging;
 
 namespace EvalD2P2.Api.Functions.Event;
 
-public class AddEvent
+public class DeleteEvent
 {
     private readonly ILogger _logger;
     private readonly IEventService _eventService;
     
-    public AddEvent(ILogger<AddEvent> logger, IEventService eventService)
+    public DeleteEvent(ILogger<AddEvent> logger, IEventService eventService)
     {
         _logger = logger;
         _eventService = eventService;
     }
-    
-    [Function("AddEvent")]
-    public async Task<HttpResponseData> RunAsync(
-        [HttpTrigger(AuthorizationLevel.Function, "post", Route = "event")] HttpRequestData req,
+    [Function("DeleteEvent")]
+    public async Task<HttpResponseData> DeleteAsync(
+        [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "event/{id}")] HttpRequestData req,
+        Guid id,
         FunctionContext executionContext)
     {
         _logger.LogInformation("C# HTTP trigger function processed a request.");
@@ -29,9 +28,7 @@ public class AddEvent
         
         try
         {
-            var content = await new StreamReader(req.Body).ReadToEndAsync();
-            var @event = JsonSerializer.Deserialize<Entities.Event>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-            await _eventService.AddEventAsync(@event);
+            await _eventService.DeleteEventAsync(id);
         }
         catch (Exception ex)
         {
