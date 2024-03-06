@@ -42,4 +42,28 @@ public class AddEvent
         return response;
     }
     
+    [Function("GetAll")]
+    public async Task<HttpResponseData> GetAllAsync(
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "event")] HttpRequestData req,
+        FunctionContext executionContext)
+    {
+        _logger.LogInformation("C# HTTP trigger function processed a request.");
+        
+        var response = req.CreateResponse(HttpStatusCode.OK);
+        
+        try
+        {
+            var events = await _eventService.GetAllEventsAsync();
+            var json = JsonSerializer.Serialize(events);
+            await response.WriteStringAsync(json);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, ex.Message);
+            response = req.CreateResponse(HttpStatusCode.InternalServerError);
+        }
+        
+        return response;
+    }
+    
 }
