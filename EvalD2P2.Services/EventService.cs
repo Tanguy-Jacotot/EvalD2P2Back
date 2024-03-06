@@ -31,7 +31,7 @@ public class EventService : IEventService
     {
         return await _repository.GetAllEventsAsync();
     }
-    
+
     public async Task<Event> GetEventByIdAsync(Guid id)
     {
         return await _repository.GetEventByIdAsync(id);
