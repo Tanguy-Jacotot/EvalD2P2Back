@@ -1,8 +1,46 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvalD2P2.Entities", "EvalD2P2.Entities\EvalD2P2.Entities.csproj", "{DEE71D63-5A8E-4889-A071-14CF9C237B33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvalD2P2.Repositories", "EvalD2P2.Repositories\EvalD2P2.Repositories.csproj", "{6DA4BAA3-0DAF-477F-B553-8BABD5A6DE7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvalD2P2.Repositories.Contracts", "EvalD2P2.Repositories.Contracts\EvalD2P2.Repositories.Contracts.csproj", "{EC38DAE5-2DA0-4666-BE90-2BC5166AEC43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvalD2P2.Services", "EvalD2P2.Services\EvalD2P2.Services.csproj", "{12450EC5-0345-4F1F-A493-7AD7FCF47C8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvalD2P2.Services.Contracts", "EvalD2P2.Services.Contracts\EvalD2P2.Services.Contracts.csproj", "{439C66A1-F645-43EF-9BCE-F87681545771}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvalD2P2.AzureApi", "EvalD2P2.AzureApi\EvalD2P2.AzureApi.csproj", "{BA6FF3F0-F7F5-4C76-87C0-8818FE63C3F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEE71D63-5A8E-4889-A071-14CF9C237B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE71D63-5A8E-4889-A071-14CF9C237B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE71D63-5A8E-4889-A071-14CF9C237B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE71D63-5A8E-4889-A071-14CF9C237B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA4BAA3-0DAF-477F-B553-8BABD5A6DE7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA4BAA3-0DAF-477F-B553-8BABD5A6DE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA4BAA3-0DAF-477F-B553-8BABD5A6DE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA4BAA3-0DAF-477F-B553-8BABD5A6DE7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC38DAE5-2DA0-4666-BE90-2BC5166AEC43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC38DAE5-2DA0-4666-BE90-2BC5166AEC43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC38DAE5-2DA0-4666-BE90-2BC5166AEC43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC38DAE5-2DA0-4666-BE90-2BC5166AEC43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12450EC5-0345-4F1F-A493-7AD7FCF47C8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12450EC5-0345-4F1F-A493-7AD7FCF47C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12450EC5-0345-4F1F-A493-7AD7FCF47C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12450EC5-0345-4F1F-A493-7AD7FCF47C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{439C66A1-F645-43EF-9BCE-F87681545771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{439C66A1-F645-43EF-9BCE-F87681545771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{439C66A1-F645-43EF-9BCE-F87681545771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{439C66A1-F645-43EF-9BCE-F87681545771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA6FF3F0-F7F5-4C76-87C0-8818FE63C3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6FF3F0-F7F5-4C76-87C0-8818FE63C3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6FF3F0-F7F5-4C76-87C0-8818FE63C3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6FF3F0-F7F5-4C76-87C0-8818FE63C3F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
